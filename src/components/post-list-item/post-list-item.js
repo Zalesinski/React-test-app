@@ -1,24 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './post-list-item.css'
 
-export default class PostListItem extends Component {
+// export default class PostListItem extends Component {
     
 
-    onImportant() {
-        this.setState(({important}) => ({
-            important: !important
-        }))
-    }
 
-    onLike() {
-        this.setState(({like}) => ({
-            like: !like
-        }))
-    }
 
-    render() {
-        const {label, onDelete, onToggleImportant, onToggleLiked, important, like} = this.props;
+//     render() {
+
+const PostListItem = (props) => {
+        const {label, onDelete, onToggleImportant, onToggleLiked, important, like} = props;
         let classNames = 'app-list-item d-flex justify-content-between';
 
         if (important) {
@@ -54,4 +46,5 @@ export default class PostListItem extends Component {
             </div>
         )
         }
-}
+
+export default PostListItem;
